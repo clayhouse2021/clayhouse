@@ -157,9 +157,21 @@
             border-color: #E5D6BF;                   /* 邊框同步亮起來 */
             color: #524641;
         }
+        /* ✨ 當滑鼠移到「合作案例」按鈕上時，裡面的 Icon 圓圈要做什麼變化 */
+        .link-card:hover .icon-circle {
+            background-color: #b2836d; /* 👈 圓圈底色變成你的經典深暖棕（可依喜好換色） */
+            color: #FFFFFF;            /* 裡面的握手圖標變成白色，對比超清晰！ */
+            transition: background-color 0.2s ease, color 0.2s ease; /* 讓顏色轉變更平滑 */
+        }
         .link-card.primary:hover {
             background-color: #EBBF6B;
             border-color: #DDAE54;
+        }
+        /* ✨ 當滑鼠移到「合作案例」按鈕上時，裡面的 Icon 圓圈要做什麼變化 */
+        .link-card.primary:hover .icon-circle {
+            background-color: #71594e; /* 👈 圓圈底色變成你的經典深暖棕（可依喜好換色） */
+            color: #FFFFFF;            /* 裡面的握手圖標變成白色，對比超清晰！ */
+            transition: background-color 0.2s ease, color 0.2s ease; /* 讓顏色轉變更平滑 */
         }
 
         /* 按鈕左側文字與圖示的排列 */
