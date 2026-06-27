@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黏黏屋 ClayHouse | 商業合作案例</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* 基礎設定（延續你的低彩度溫柔燕麥色） */
+        body {
+            background-color: #F7F4F0; 
+            color: #524641;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 頁頭區塊 */
+        .header {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 50px; /* 調整整個頁頭跟下方卡片的距離 */
+        }
+       /* 控制無背景 PNG 圖檔的樣式 */
+        .header-logo {
+            width: 100px;        /* 圖片寬度 */
+            height: auto;        
+            display: block;      
+            margin: 0 auto 12px auto; /* 置中並與下方文字保有間距 */
+            
+            /* ✨ 確保這一行沒有 box-shadow！ */
+            /* 如果原本有寫 box-shadow，直接把它整行刪除，或是改成下面這樣： */
+            box-shadow: none;    /* 👈 或者是直接強制設為無陰影 */
+        }
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin: 0px;
+            color: #524641;
+        }
+        .header p {
+            font-size: 15px;
+            color: #756761;
+            margin: 0;
+        }
+
+        /* 網格佈局（自動在大螢幕排成兩排、手機排成一排） */
+        .portfolio-grid {
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        /* 合作案例卡片 */
+        .case-card {
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: #524641;
+            box-shadow: 0 10px 30px rgba(82, 70, 65, 0.05);
+            border: 1px solid #EFEAE4;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 滑鼠移上去時浮起來、變溫柔黃邊框 */
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(82, 70, 65, 0.1);
+            border-color: #E5D6BF;
+        }
+
+        /* 卡片圖片區 */
+        .case-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #FAF8F5;
+            border-bottom: 1px solid #EFEAE4;
+        }
+
+        /* 卡片文字區 */
+        .case-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #FAF8F5; /* 內頁也用燕麥奶色點綴 */
+        }
+
+        .case-tag {
+            font-size: 12px;
+            font-weight: 700;
+            background-color: #F3E7D3; /* 燕麥卡其標籤 */
+            color: #756761;
+            padding: 4px 10px;
+            border-radius: 12px;
+            align-self: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .case-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            line-height: 1.4;
+        }
+
+        .case-desc {
+            font-size: 14px;
+            color: #756761;
+            line-height: 1.5;
+            margin: 0 0 16px 0;
+        }
+
+        .case-footer {
+            font-size: 13px;
+            font-weight: 600;
+            color: #756761;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 返回首頁按鈕 */
+        .back-btn {
+            margin-top: 50px;
+            text-decoration: none;
+            color: #756761;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+        }
+        .back-btn:hover {
+            color: #524641;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="sticky.png" class="header-logo" alt="黏黏屋角色">
+        <h1>商業合作案例</h1>     
+    </div>
+
+    <div class="portfolio-grid">
+
+        <a href="https://today.line.me/tw/v3/article/XYgq3ZQ" target="_blank" class="case-card">
+            <img src="line-shop.jpg" class="case-image" alt="LINE購物">
+            <div class="case-info">
+                <div>
+                    <span class="case-tag">品牌貼圖聯名</span>
+                    <h3 class="case-title">LINE購物品牌名店 × 黏黏屋</h3>
+                    <p class="case-desc">限時免費貼圖至2025年2月15日止</p>
+                </div>
+                <div class="case-footer">
+                    查看活動報導 <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/p/DWp8MNhEoYn/" target="_blank" class="case-card">
+            <img src="moreshot.png" class="case-image" alt="Moreshot">
+            <div class="case-info">
+                <div>
+                    <span class="case-tag">拍貼合作</span>
+                    <h3 class="case-title">Moreshot X 黏黏屋 拍貼相框</h3>
+                    <p class="case-desc">上架期間2026/4/2~6/3</p>
+                </div>
+                <div class="case-footer">
+                    在 Instagram 上查看 <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://www.instagram.com/p/C0saUyvy0DP/" target="_blank" class="case-card">
+            <img src="knocky.jpeg" class="case-image" alt="Knocky">
+            <div class="case-info">
+                <div>
+                    <span class="case-tag">週邊商品聯名</span>
+                    <h3 class="case-title">Knocky X 黏黏屋</h3>
+                    <p class="case-desc">小熱狗聯名平板殼</p>
+                </div>
+                <div class="case-footer">
+                    在 Instagram 上查看 <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </a>
+
+    </div>
+
+    <a href="index.html" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i> 返回主頁
+    </a>
+
+</body>
+</html>

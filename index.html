@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黏黏屋 ClayHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* 基礎樣式設定 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            /* 換成跟圖片一樣、中間帶點微光、四周較暗的深色漸層背景 */
+            background-color: #F3E8D2; 
+            color: #524641; /* 主要文字改成深棕色 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px; /* 增加上下留白，讓它在電腦上更像一張懸浮卡片 */
+        }
+/* 網頁主體容器（模擬精緻卡片寬度） */
+        .container {
+            width: 100%;
+            /* 👇 關鍵在這裡！把原本的 580px 縮小到 460px 左右，視覺會非常精緻 */
+            max-width: 460px; 
+            background-color: #FFFFFF; /* 讓卡片主體比外面的背景再深一點點 */
+            border-radius: 28px;       /* 稍微修圓一點點，看起來更精緻 */
+            overflow: hidden;
+            /* 加上精細的陰影，讓卡片有浮起來的立體感 */
+            box-shadow: 0 20px 50px rgba(82, 70, 65, 0.08);
+            padding-bottom: 30px;
+            position: relative;
+        }
+
+        /* 頂部橫幅 Banner */
+        .banner {
+            width: 100%;
+            height: 160px;
+            background-image: url('my-banner.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* 大頭貼 */
+        .avatar-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -30px; /* 讓頭像往上移，壓在 Banner 上 */
+            position: relative;
+            z-index: 2;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 6px solid #ffffff; /* 頭貼外圈 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: #524641;
+            object-fit: cover;
+
+            /* ✨ 關鍵加入：讓頭貼與外圈一起浮現出柔焦陰影 */
+            box-shadow: 0 8px 24px rgba(82, 70, 65, 0.15);
+        }
+
+        /* 介紹文字區塊 */
+        .profile-info {
+            text-align: center;
+            padding: 15px 60px 24px 60px;/* 頂部 8px、左右 32px、底部 24px */
+           
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: #524641; /* 名字用深暖棕 */
+            margin-top: -8px;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .profile-bio {
+            font-size: 14px;
+            color: #756761;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* 橫排 Icon 區塊 */
+        .social-icons {
+            display: flex;
+            justify-content: center; /* 讓所有 Icon 置中 */
+            align-items: center;
+            gap: 20px;              /* Icon 之間的間距，可自由調整 */
+            margin-top: 0px;        /* 與上方簡介文字的距離 */
+            margin-bottom: 30px;     /* 與下方大按鈕的距離 */
+        }
+
+        .icon-link {
+            text-decoration: none;
+            font-size: 24px;        /* 控制 Icon 的大小 */
+            color: #756761;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        /* 滑鼠移過去稍微放大，增加互動感 */
+        .icon-link:hover {
+            transform: scale(1.2);
+        }
+
+        /* 連結按鈕區塊 */
+        .links-group {
+            padding: 0 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* 按鈕之間的間距 */
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #FFFFFF; /* 按鈕底色：淺奶茶白 */
+            color: #524641;            /* 按鈕字體：深暖棕 */
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* 第一個按鈕通常是主推商品，帶有一點點米黃色（呼應原圖設計） */
+        .link-card.primary {
+            background-color: #f6dc98; /* 更濃郁飽和的招牌芒果奶黃色 */
+            border-color: #F1C66B;
+        }
+
+        /* 滑鼠移過去的縮放特效 */
+        .link-card:hover {
+            transform: translateY(-2px);              /* 微幅上浮 */
+            background-color: #F3DFAC;               /* 👈 瞬間變成香濃奶黃色 */
+            border-color: #E5D6BF;                   /* 邊框同步亮起來 */
+            color: #524641;
+        }
+        .link-card.primary:hover {
+            background-color: #EBBF6B;
+            border-color: #DDAE54;
+        }
+
+        /* 按鈕左側文字與圖示的排列 */
+        .link-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* 模擬原圖的圓圈小圖示 */
+        .icon-circle {
+            width: 26px;
+            height: 26px;
+            background-color: #756761;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+
+        /* 右側的箭頭符號 */
+        .arrow-icon {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* 頁尾 */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #666666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="banner"></div>
+
+        <div class="avatar-container">
+            <img src="my-avatar.png" class="avatar">
+        </div>
+
+        <div class="profile-info">
+            <div class="profile-name">黏黏屋 ClayHouse</div>
+            <div class="profile-bio">極簡小畫家，畫出社畜黏糕的生活。曾經是個找不到工作的內向人，拿起筆創造自己的價值。</div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/clay_house_2021?utm_source=qr" target="_blank" class="icon-link" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            
+            <a href="https://facebook.com/profile.php?id=61551032759925" target="_blank" class="icon-link" title="Facebook">
+                <i class="fa-brands fa-square-facebook"></i>
+            </a>
+            
+            <a href="https://line.me/R/ti/p/@526rxqkt" target="_blank" class="icon-link" title="LINE">
+               <i class="fa-brands fa-line"></i>
+            </a>
+            
+            <a href="mailto:claypainthouse@gmail.com" class="icon-link" title="Email">
+               <i class="fa-solid fa-envelope"></i>
+            </a>
+            
+        </div>
+
+        <div class="links-group">
+            
+            <a href="https://kusdom.com/clayhouse/zh_tw" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <span>Kusdom 商店</span>
+                </div>
+                <div class="arrow-icon">↗</div>
+            </a>
+
+            <a href="https://vocus.cc/salon/clayhouse" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <span>方格子</span>
+                </div>
+                <div class="arrow-icon">↗</div>
+            </a>
+
+            <a href="https://www.webtoons.com/zh-hant/canvas/%E9%BB%8F%E7%B3%95%E7%94%9F%E5%AD%98%E6%97%A5%E8%A8%98/list?title_no=977642" target="_blank" class="link-card">
+                <div class="link-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <span>webtoon漫畫</span>
+                </div>
+                <div class="arrow-icon">↗</div>
+            </a>
+
+              <a href="portfolio.html" target="_blank" class="link-card primary">
+                <div class="link-content">
+                    <div class="icon-circle">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <span>合作案例</span>
+                </div>
+                <div class="arrow-icon">↗</div>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            <span>© 2026 ClayHouse</span>
+        </div>
+    </div>
+
+</body>
+</html>
