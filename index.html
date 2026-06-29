@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;600;800&display=swap" rel="stylesheet">
     
     <meta property="og:title" content="黏黏屋 ClayHouse" />
-    <meta property="og:description" content="極簡小畫家，畫出社畜黏糕的生活。曾經是個找不到工作的內向人，拿起筆創造自己的價值。" />
+    <meta property="og:description" content="歡迎來到黏黏屋空間。" />
     <meta property="og:url" content="https://clayhouse2021.netlify.app/" />
     <meta property="og:image" content="https://clayhouse2021.netlify.app/img/avatar.png" />
     <meta property="og:type" content="website" />
@@ -41,10 +41,9 @@
             text-align: center;
             box-shadow: 0 15px 45px rgba(82, 70, 65, 0.08);
             overflow: hidden;
-            padding-bottom: 35px;
+            padding-bottom: 25px; /* 調整底部間距讓版權更好看 */
         }
 
-        /* 👇 2. 修正網頁 Banner 背景圖片路徑 👇 */
         .banner {
             width: 100%;
             height: 150px;
@@ -54,7 +53,6 @@
             background-color: #F3E8D2;
         }
 
-        /* 👇 3. 修正網頁大頭貼圖片路徑 👇 */
         .avatar {
             width: 90px;
             height: 90px;
@@ -168,6 +166,14 @@
             font-size: 13px;
             color: #888888;
         }
+
+        /* 👇 新增的 Copyright 樣式 👇 */
+        .footer {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #A39690;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 <body>
@@ -178,20 +184,12 @@
         <div class="bio">歡迎來到黏黏屋空間。</div>
 
         <div class="social-icons-wrapper">
+            <a href="https://www.facebook.com/你的粉絲專頁網址" target="_blank" class="social-icon-link" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
             <a href="https://www.instagram.com/clayhouse2021/" target="_blank" class="social-icon-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://line.me/R/ti/p/@462whgxp?oat_content=url" target="_blank" class="social-icon-link" title="LINE"><i class="fa-brands fa-line"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61551032759925" target="_blank" class="social-icon-link" title="facebook"><i class="fa-brands fa-facebook"></i></a>
         </div>
 
         <div class="links-wrapper">
-            <a href="https://hayaichi.com.tw/one/clay_house_2021" target="_blank" class="link-card">
-                <div class="link-content">
-                    <div class="icon-circle"><i class="fa-solid fa-cart-shopping"></i></div>
-                    <span>林市製衣</span>
-                </div>
-                <div class="arrow-icon">↗</div>
-            </a>
-
             <a href="https://shopee.tw/clayhouse2021" target="_blank" class="link-card">
                 <div class="link-content">
                     <div class="icon-circle"><i class="fa-solid fa-cart-shopping"></i></div>
@@ -223,6 +221,10 @@
                 </div>
                 <div class="arrow-icon">↗</div>
             </a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 ClayHouse. All rights reserved.
         </div>
     </div>
 </body>
