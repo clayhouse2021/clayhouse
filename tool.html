@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具箱 | 黏黏屋 ClayHouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;600;800&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="工具箱 | 黏黏屋 ClayHouse" />
+    <meta property="og:description" content="歡迎來到黏黏屋的工具箱，這裡分享我常用的創作與開發工具。" />
+    <meta property="og:url" content="https://clayhouse2021.netlify.app/tools.html" />
+    <meta property="og:image" content="https://clayhouse2021.netlify.app/img/avatar.png" />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* 延續原本官網的視覺基因 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #F7F4F0;
+            color: #524641;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #FFFFFF;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 15px 45px rgba(82, 70, 65, 0.08);
+            overflow: hidden;
+            padding: 30px 25px 25px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #E2B27A;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: transform 0.2s ease;
+        }
+        .back-btn:hover {
+            transform: translateX(-4px);
+        }
+
+        .tools-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .tools-title i {
+            color: #E2B27A;
+        }
+
+        .tools-subtitle {
+            font-size: 14px;
+            color: #756761;
+            margin-bottom: 30px;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 400px) {
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tool-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 15px;
+            background-color: #FFFFFF;
+            border: 1px solid #EFEAE4;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #524641;
+            transition: all 0.2s ease;
+        }
+
+        .tool-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 14px rgba(82, 70, 66, 0.06);
+            border-color: #E2B27A;
+        }
+
+        .tool-icon-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #FDFBF7;
+            border: 1px solid #EFEAE4;
+            color: #E2B27A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .tool-item:hover .tool-icon-circle {
+            background-color: #E2B27A;
+            color: #FFFFFF;
+            border-color: #E2B27A;
+        }
+
+        .tool-name {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .tool-desc {
+            font-size: 12px;
+            color: #9E918A;
+            line-height: 1.3;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #A39690;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 返回主頁</a>
+
+        <h1 class="tools-title"><i class="fa-solid fa-box-open"></i> 工具箱</h1>
+        <p class="tools-subtitle">AI輔助製造工具</p>
+
+        <div class="tools-grid">
+            
+            <a href="edit.html" class="tool-item">
+                <div class="tool-icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <span class="tool-name">主頁產生器</span>
+                <span class="tool-desc">點擊開始製作個人名片頁面</span>
+            </a>
+
+             <a href="" class="tool-item">
+                <div class="tool-icon-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <span class="tool-name">敬啟期待</span>
+                <span class="tool-desc"></span>
+            </a>
+
+
+        </div>
+
+        <div class="footer">
+            &copy; 2026 ClayHouse. All rights reserved.
+        </div>
+    </div>
+</body>
+</html>
